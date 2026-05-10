@@ -2,7 +2,13 @@
   "name": "blog",
   "type": "module",
   "version": "0.0.1",
-  "packageManager": "pnpm@latest",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": ">=11.0.0",
+      "onFail": "download"
+    }
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
