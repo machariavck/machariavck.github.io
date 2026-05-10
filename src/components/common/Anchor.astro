@@ -1,0 +1,22 @@
+---
+export type Props = {
+  url: string;
+  class?: string;
+  external?: boolean;
+  "aria-label"?: string;
+};
+
+const { url, external, class: className } = Astro.props;
+---
+
+<a
+  href={url}
+  class:list={[
+    "zag-offset underline font-medium flex items-center",
+    className
+  ]}
+  target={external ? "_blank" : "_self"}
+  aria-label={Astro.props["aria-label"]}
+>
+  <slot />
+</a>

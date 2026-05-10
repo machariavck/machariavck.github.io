@@ -1,0 +1,58 @@
+---
+import { getCollection } from "astro:content";
+import { getConfigurationCollection } from "../../lib/utils";
+import Layout from "../../layouts/Layout.astro";
+import ArticleSnippet from "../../components/ArticleSnippet.astro";
+import Section from "../../components/common/Section.astro";
+
+const articles = (await getCollection("blog")).sort(
+    (a, b) => b.data.timestamp.valueOf() - a.data.timestamp.valueOf(),
+);
+
+const { data: config } = await getConfigurationCollection();
+---
+
+<Layout>
+    <Fragment slot="head">
+        <title>{config.blogMeta.title}</title>
+        <meta name="description" content={config.blogMeta.description}/>
+        <meta property="og:title" content={config.blogMeta.title} />
+        <meta property="og:description" content={config.blogMeta.description} />
+        {
+            config.blogMeta.keywords && (
+                <meta
+                    name="keywords"
+                    content={config.blogMeta.keywords.join(", ")}
+                />
+            )
+        }
+        <meta property="og:url" content={`${config.site.baseUrl}/blog`} />
+        <meta name="x:card" content="summary_large_image" />
+        <meta name="x:title" content={config.blogMeta.title} />
+        <meta name="x:description" content={config.blogMeta.description} />
+        <meta http-equiv="content-language" content="en" />
+        <meta name="language" content="English" />
+        <link rel="canonical" href={`${config.site.baseUrl}/blog`} />
+    </Fragment>
+    <Section class="my-8">
+        <div class="flex items-center gap-4 pt-8 pb-16">
+            <h1 class="font-display text-3xl sm:text-4xl leading-loose">
+                {config.texts.articlesName}
+            </h1>
+        </div>
+        <ul>
+            {
+                articles.map((article) => (
+                    <li>
+                        <ArticleSnippet
+                            title={article.data.title}
+                            description={article.data.description}
+                            url={`/blog/${article.data.slug}`}
+                            tags={article.data.tags ?? []}
+                        />
+                    </li>
+                ))
+            }
+        </ul>
+    </Section>
+</Layout>

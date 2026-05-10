@@ -1,0 +1,30 @@
+---
+import Anchor from "./common/Anchor.astro";
+
+export type Props = {
+  title: string;
+  description: string;
+  url: string;
+  tags: string[];
+};
+
+const { title, description, url, tags } = Astro.props;
+---
+
+<div class="relative zag-text zag-transition flex flex-col gap-3 mb-8 hover-zag-dotted-grid">
+  <Anchor url={url} class="text-xl">
+    {title}
+  </Anchor>
+  <p class="zag-text zag-transition">
+    {description}
+  </p>
+  <div class="flex flex-row wrap justify-end">
+    {
+      tags.map((tag) => (
+        <span class="zag-transition text-sm italic">
+          {tag}
+        </span><span>|</span>
+      ))
+    }
+  </div>
+</div>

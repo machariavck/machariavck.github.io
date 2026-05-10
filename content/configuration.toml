@@ -1,0 +1,31 @@
+# Due to how Astro handles type inference with this structure,
+# we need to prefix all configuration keys with an underscore.
+
+[_.site]
+baseUrl = "http://0xmvck.github.io"
+
+[_.globalMeta]
+title = "0xmvck"
+description = "security research"
+keywords = ["security", "cybersec", "research", "cloud", "rust", "python"]
+
+[_.blogMeta]
+title = "blog"
+description = "Some articles on cybersec"
+
+[_.notFoundMeta]
+title = "404"
+description = "Not Found"
+
+[_.personal]
+name = "0xmvck"
+xProfile = "https://x.com/0xmvck"
+
+[_.texts]
+articlesName = "Articles"
+viewAll = "View All"
+noArticles = "No Articles Found."
+
+[_.menu]
+home = "/"
+blog = "/blog"
