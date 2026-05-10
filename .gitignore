@@ -26,4 +26,4 @@ pnpm-debug.log*
 # unpublished blogs or projects
 *.tmp.md
 
-pnpm-lock.yaml
+# pnpm-lock.yaml
