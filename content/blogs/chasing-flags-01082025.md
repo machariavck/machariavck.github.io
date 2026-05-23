@@ -69,8 +69,6 @@ Looking at the source code, you would discover hidden credentials in the commit 
 From there, you login with those credentials, which are valid but it turns out that `dinesh` isn’t the admin. Looking through the source code, we find that JWT signature verification is disabled, therefore we just need to modify our cookie to have the right header and data fields, as done previously in the first step, and that should allow us to authenticate as admin:
 ![disabled_jwt_signing](../../src/assets/chasing-flags-01082025/15.png)
 
-~THE END~
-
 ## Challenge 2 - Captcha The Flag
 ### TLDR
 In this challenge, there were three challenges we had to overcome.

@@ -1,7 +1,7 @@
 ---
-title: Skyfall - HTB Machine Writeup
+title: Skyfall - HTB Insane Machine Writeup
 slug: skyfall-htb-insane-machine-writeup-29032024
-description: Writeup of the Skyfall HTB Insane Machine
+description: A writeup of the Skyfall HTB Insane Machine
 tags: ["MinIO", "nginx", "vault", "api", "otp", "flask"]
 featured: false
 timestamp: 2024-03-29T15:13:30+00:00
