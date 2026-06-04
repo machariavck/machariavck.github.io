@@ -11,7 +11,11 @@ keywords = ["security", "cybersec", "research", "cloud", "rust", "python"]
 
 [_.blogMeta]
 title = "blog"
-description = "Some articles on cybersec"
+description = "The blog"
+
+[_.aboutMeta]
+title = "about"
+description = "About author"
 
 [_.notFoundMeta]
 title = "404"
@@ -29,3 +33,4 @@ noArticles = "No Articles Found."
 [_.menu]
 home = "/"
 blog = "/blog"
+about = "/about"

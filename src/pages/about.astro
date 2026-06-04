@@ -1,0 +1,41 @@
+---
+import Section from "../components/common/Section.astro";
+import Layout from "../layouts/Layout.astro";
+import { getConfigurationCollection } from "../lib/utils";
+
+const { data: config } = await getConfigurationCollection();
+---
+
+<Layout>
+    <Fragment slot="head">
+        <title>{config.aboutMeta.title}</title>
+        <meta name="description" content={config.aboutMeta.description}/>
+        <meta property="og:title" content={config.aboutMeta.title}/>
+        <meta property="og:description" content={config.aboutMeta.description}/>
+        <meta property="og:url" content={config.site.baseUrl} />
+        <meta name="x:card" content="summary_large_image" />
+        <meta name="x:title" content={config.aboutMeta.title} />
+        <meta name="x:description" content={config.aboutMeta.description} />
+        <meta http-equiv="content-language" content="en" />
+        <meta name="language" content="English" />
+        <link rel="canonical" href={config.site.baseUrl} />
+    </Fragment>
+    <Section class="mt-16">
+        <div>
+            I'm 0xmvck, self-taught security researcher.<br>
+            Previously worked in cloud computing, web development and system administration.<br>
+            Open to work, feel free to contact me through X.
+        </div>
+    </Section>
+    <Section>
+        <h3 class="underline underline-offset-8 my-6">Certifications</h3>
+        <ul class="list-disc ml-4">
+            <li>HTB Certifications (CJCA, CPTS)</li>
+            <li>Cisco Certified Ethical Hacker</li>
+            <li>AWS Certified (Solutions Architect, SysOps Administrator, AI Practitioner)</li>
+            <li>Azure Certified (Azure Fundamentals)</li>
+            <li>KCNA: Kubernetes and Cloud Native Associate</li>
+            <li>Cloud Developer (Udacity Nanodegree)</li>
+        </ul>
+    </Section>
+</Layout>

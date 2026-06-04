@@ -1,7 +1,7 @@
 ---
 title: Crypto Challenges Writeup - p3rf3ctr00t CTF 2024
 slug: crypto-challenges-p3rf3ctr00t-ctf-24112024
-description: Writeup of two crypto challenges for p3rf3ctr00t CTF 2024
+description: Writeup of two cryptography challenges I created for p3rf3ctr00t CTF 2024
 tags: ["linear-equations", "rsa", "crypto"]
 featured: false
 timestamp: 2024-11-24T00:42:30+00:00

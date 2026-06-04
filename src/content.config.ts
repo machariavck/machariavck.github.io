@@ -11,31 +11,13 @@ const configuration = defineCollection({
     parser: (text) => JSON.parse(JSON.stringify(parseToml(text))),
   }),
   schema: z.object({
-    /**
-     * Core site configuration.
-     */
     site: z.object({
       baseUrl: z.string().url(),
     }),
 
-    /**
-     * The global metadata for the site. If specific page metadata is not provided,
-     * this metadata will be used as a fallback for SEO and Open Graph tags.
-     */
     globalMeta: z.object({
-      /**
-       * The title of the page, used in the HTML `<title>` tag and Open Graph metadata.
-       */
       title: z.string(),
-
-      /**
-       * The short description of the page, used in Open Graph metadata and as a fallback for SEO.
-       */
       description: z.string(),
-
-      /**
-       * Keywords for SEO, used in the `<meta name="keywords">` tag.
-       */
       keywords: z.array(z.string()).optional(),
     }),
 
@@ -45,15 +27,14 @@ const configuration = defineCollection({
     }),
 
     blogMeta: z.object({
-      /**
-       * The title of the page, used in the HTML `<title>` tag and Open Graph metadata.
-       */
       title: z.string(),
       description: z.string(),
-
-      /**
-       * Keywords for SEO, used in the `<meta name="keywords">` tag.
-       */
+      keywords: z.array(z.string()).optional(),
+    }),
+    
+    aboutMeta: z.object({
+      title: z.string(),
+      description: z.string(),
       keywords: z.array(z.string()).optional(),
     }),
 
@@ -70,7 +51,8 @@ const configuration = defineCollection({
 
     menu: z.object({
       home: z.string(),
-      blog: z.string()
+      blog: z.string(),
+      about: z.string()
     }),
   }),
 });
@@ -83,34 +65,11 @@ const blog = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./content/blogs" }),
   schema: z
     .object({
-      /**
-       * The title of the blog post.
-       */
       title: z.string(),
-
-      /**
-       * The slug for the blog post, used in the URL.
-       */
       slug: z.string().optional(),
-
-      /**
-       * A short description of the blog post, used in Open Graph metadata and as a fallback for SEO.
-       */
       description: z.string(),
-
-      /**
-       * The tags associated with the blog post, used for categorization and filtering.
-       */
       tags: z.array(z.string()).optional(),
-
-      /**
-       * Whether the blog post is featured on the homepage.
-       */
       featured: z.boolean().default(false),
-
-      /**
-       * The timestamp of the blog post, used for sorting and displaying the date.
-       */
       timestamp: z.date().transform((val) => new Date(val)),
     })
     .transform((data) => {

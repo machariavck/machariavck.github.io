@@ -86,7 +86,7 @@ If we try to login with random creds but without solving the captcha:
 We have to enter our username, password and also solve the captcha, and trying out with random creds, we get an error:
 ![invalid_creds_err](../../src/assets/chasing-flags-01082025/18.png)
 
-At the bottom, we have a create account link (the ‘forgot password’ link is disabled), and we can try to create an account, I’ll use `cy00p:cy00p`:
+At the bottom, we have a create account link (the ‘forgot password’ link is disabled), and we can proceed to create an account:
 ![create_account](../../src/assets/chasing-flags-01082025/19.png)
 
 After registering, we’re redirected to the login page, and we can now try to login with our valid creds:
@@ -160,7 +160,7 @@ return f"username='||(SELECT username FROM users WHERE id LIKE 21 AND &password=
 
 A lot is going on here. The reason I'm using `LIKE` to write the conditions is because our WAF had blocked logical operators i.e. if you tried to do `id=1`, you would get a WAF error. By the time I was attempting this challenge, my id was `21` ( found out after running some other queries), and I just wanted to confirm if I can correctly extract my password through this. In the payload section, I would bruteforce the characters, and terminate with a `%`, which is a wildcard in sql.
 
-3. My password was supposed to be `cy00p`, and before I started using the script, the payload `c%` was producing an error on BurpSuite. Something was off. I couldn't tell what was going on, so I decided to proceed running the script.
+3. My password was supposed to be `catsAreCool`, and before I started using the script, the payload `c%` was producing an error on BurpSuite. Something was off. I couldn't tell what was going on, so I decided to proceed running the script.
 
 4. After the script run, we got the column name `__authpw__` instead of the actual password (no screenshot here, instance was already down). Huh, well I can't explain it but hey, we got the column name.
 5. So I just modified the script to get the admin password and voila!
