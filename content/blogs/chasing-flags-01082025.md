@@ -1,7 +1,7 @@
 ---
 title: ChasingFlags "Can You Hack it?" Round 1
 slug: chasing-flags-01082025
-description: A brief walkthrough on two interesting web challenges from ChasingFlags "Can You Hack It?" Round 1 CTF challenge held on 01/08/2025 
+description: A brief walkthrough on two web challenges from ChasingFlags "Can You Hack It?" Round 1 CTF challenge held on 01/08/2025 
 tags: ["express", "git", "python", "sqlite", "jwt"]
 featured: true
 timestamp: 2025-08-03T19:46:03+00:00
