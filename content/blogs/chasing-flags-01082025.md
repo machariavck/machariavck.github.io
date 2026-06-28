@@ -31,14 +31,14 @@ When you look at the source of the page, we just have a very simple html file, w
 Now we know we’re running `Express`, which is a JS middleware, and we can now try to do further enumeration. I’ll do a directory fuzz. Something worth noting is that if we try to hit an invalid endpoint, we get an error response that prints out the characters that we provided as the path. 
 ![404_error](../../src/assets/chasing-flags-01082025/4.png)
 
-I initially tested out SSTI and XSS payloads but that was a dead end; input is well sanitized.
+You can test SSTI and XSS payloads but that's a dead end; input is well sanitized.
 So, next we can query for paths using various tools, I’ll use `feroxbuster`:
 ![enum_paths](../../src/assets/chasing-flags-01082025/5.png)
 
-There’s a dashboard, which kind of makes sense, since we’re being asked to authenticate. Now, before I figured out the intended way of solving this challenge, I took a lot of time with what I already knew here. If you try to access the dashboard endpoint, you get redirected to the login page, hence the 302 response. I started poking around with the dashboard, and I first asked chatGPT what kind of authentication Express applications support and the structure of the auth cookies. Here’s the response:
+There’s a dashboard, which kind of makes sense, since we’re being asked to authenticate. Now, before I figured out the intended way of solving this challenge, I took a lot of time with what I already knew here. If you try to access the dashboard, you get redirected to the login page, hence the 302 response. I started poking around with the dashboard, and I first asked chatGPT what kind of authentication Express applications support and the structure of the auth cookies. Here’s the response:
 ![gpt_response_on_express_cookies](../../src/assets/chasing-flags-01082025/6.png)
 
-I tried to forge these cookies, to just prompt a response from the server and see if I’ll get something, and luckily, I got something interesting (previously, the app was handling requests to non-existents paths very well, with a 404 not found page).
+I tried to forge these cookies, to just force a weird response from the server and see if I’ll get something, and fortunately, I got something interesting (previously, the app was handling requests to non-existents paths very well, with a 404 not found page).
 ![server_crashes](../../src/assets/chasing-flags-01082025/7.png)
 
 It revealed the stack trace to us, which shows the underlying directory structure, but most importantly, that a username is required in our token. So I went to [jwt.io](https://jwt.io), and crafted a simple JWT:

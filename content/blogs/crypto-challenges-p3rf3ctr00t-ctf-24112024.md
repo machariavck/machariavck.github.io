@@ -119,7 +119,7 @@ p,q = rsa.p,rsa.q # print(f"{p = }\n{q = }")
 ## extract either of p or q
 t = 0
 while True:
-				q -= int(str(t)[:3])
+        q -= int(str(t)[:3])
         p -= int(str(t)[:3])
         t += random.randint(e,e**8)
         if (t == m):
