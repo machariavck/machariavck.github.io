@@ -9,9 +9,12 @@ const { data: config } = await getConfigurationCollection();
 <Layout>
     <Fragment slot="head">
         <title>{config.aboutMeta.title}</title>
-        <meta name="description" content={config.aboutMeta.description}/>
-        <meta property="og:title" content={config.aboutMeta.title}/>
-        <meta property="og:description" content={config.aboutMeta.description}/>
+        <meta name="description" content={config.aboutMeta.description} />
+        <meta property="og:title" content={config.aboutMeta.title} />
+        <meta
+            property="og:description"
+            content={config.aboutMeta.description}
+        />
         <meta property="og:url" content={config.site.baseUrl} />
         <meta name="x:card" content="summary_large_image" />
         <meta name="x:title" content={config.aboutMeta.title} />
@@ -21,17 +24,24 @@ const { data: config } = await getConfigurationCollection();
         <link rel="canonical" href={config.site.baseUrl} />
     </Fragment>
     <Section class="mt-16">
-            My name is Victor, and I like setting up systems and applications, and during my spare time I do security research.
-            Previously worked in cloud computing, web development and system administration.<br><br>
-            My email: <code>0xmvck</code><span>@</span><span>gm</span><span>ai</span><span>l.c</span><span>om</span><br><br>
-            Some certs I've racked up:<br><br>
-            <ul class="list-disc ml-8">
-                <!-- <li>HTB CJCA and CPTS (in progress, and get out of my comments please!) </li> -->
-                <li>Cisco Certified Ethical Hacker</li>
-                <li>4xAWS Certified (Solutions Architect, SysOps, AI Fundamentals)</li>
-                <li>Azure Certified (Azure Fundamentals)</li>
-                <li>KCNA: Kubernetes and Cloud Native Associate</li>
-                <li>Cloud Developer (Udacity Nanodegree)</li>
-            </ul>
+        Hi again, I'm Victor, based in Kenya, and I do security research and bug
+        bounty hunting.<br /><br />Previously worked in cloud computing, web
+        development and system administration.<br /><br />
+        My email: <code>0xmvck</code><span>@</span><span>gm</span><span>ai</span
+        ><span>l.c</span><span>om</span><br /><br />
+        Some certs I've racked up if you care:<br /><br />
+        <ul class="list-disc ml-8">
+            <!-- <li>HTB CJCA and CPTS (in progress, and get out of my comments please!) </li> -->
+            <li>Certified Ethical Hacker (CEH) - Cisco</li>
+            <li>
+                AWS Certified Solutions Architect, SysOps Administrator and AI
+                Practitioner
+            </li>
+            <li>Azure Certified (AZ-900)</li>
+            <li>
+                Kubernetes and Cloud Native Associate (KCNA) - Linux Foundation
+            </li>
+            <li>Cloud Developer (Udacity Nanodegree)</li>
+        </ul>
     </Section>
 </Layout>

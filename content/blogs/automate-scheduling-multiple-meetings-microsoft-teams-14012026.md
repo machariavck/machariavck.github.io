@@ -1,5 +1,5 @@
 ---
-title: How to Automate Scheduling for Multiple Meetings in Microsoft Teams
+title: Automate Scheduling for Multiple Meetings in Microsoft Teams
 slug: automate-scheduling-multiple-meetings-microsoft-teams-14012026
 description: Automate Scheduling of Multiple Meetings in MS Teams
 tags: ["Microsoft 365", "Power Automate", "Excel", "Word"]
@@ -9,8 +9,8 @@ timestamp: 2026-01-14T06:42:30+00:00
 
 ## Introduction
 
-At some point in my career, I conducted interviews that had to be completed within one week. On average, they used to be around 55 - 65 sessions, spanning 30 minutes each, from Monday to Friday. It used to be a long week, but what made it even more tiring was setting up the meeting invites and sending follow-up text messages to all the candidates informing them they have an interview, and they should look at their email for more details.
-When I used to do it manually, I would spend like 3 hours each day, sending email invites and text messages for candidates I’m interviewing in the next two days e.g. On Friday, I would send emails to candidates I’m interviewing on Monday and Tuesday, and on Monday, I would send invites for those that I’m interviewing on Wednesday and Thursday etc. This was a very tedious process, and it goes without saying how exhausting the interviews were (lasting between 8 AM and 5 PM).
+At some point in my career, I conducted interviews that had to be completed within one week. On average, they used to be around 55 - 65 sessions, spanning 30 minutes each, from Monday to Friday. It used to be a long week, but what made it even more tiring was setting up the meeting invites and sending follow-up text messages to all the candidates informing them they have an interview.
+When I used to do it manually, I would spend like 3 hours each day, sending email invites and text messages for candidates I’m interviewing in the next two days e.g. On Friday, I would send emails to candidates I’m interviewing on Monday and Tuesday, and on Monday, I would send invites for those that I’m interviewing on Wednesday and Thursday etc. A very tedious process, and it goes without saying how exhausting the interviews were (lasting between 8 AM and 5 PM).
 
 So I thought, there has to be a way to automate stuff like this on Microsoft Teams. And yes, there was a way. But the process is not well documented, and I had to piece a lot of information together from different parts of the internet; blogs, community threads, comments on Microsoft blog posts etc.
 
