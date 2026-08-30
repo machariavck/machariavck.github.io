@@ -2,12 +2,12 @@
 # we need to prefix all configuration keys with an underscore.
 
 [_.site]
-baseUrl = "http://0xmvck.github.io"
+baseUrl = "http://machariavck.github.io"
 
 [_.globalMeta]
-title = "0xmvck"
+title = "machariavck"
 description = "security research"
-keywords = ["security", "cybersec", "research", "cloud", "rust", "python"]
+keywords = ["security", "cybersec", "research"]
 
 [_.blogMeta]
 title = "blog"
@@ -22,8 +22,8 @@ title = "404"
 description = "Not Found"
 
 [_.personal]
-name = "0xmvck"
-xProfile = "https://x.com/0xmvck"
+name = "machariavck"
+xProfile = "https://x.com/machariavck"
 
 [_.texts]
 articlesName = "Articles"
