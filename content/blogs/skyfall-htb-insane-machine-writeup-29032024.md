@@ -9,7 +9,7 @@ timestamp: 2024-03-29T15:13:30+00:00
 
 ## Introduction
 
-This was very cool and well-crafted box! It was rated `insane` but the HTB Community felt it was among the easier insane machines. There’s a ton of enumeration involved, let’s get right to it.
+This was very cool and well-crafted box! It was rated `insane` but the HTB Community felt it was among the easier insane machines. There’s a ton of enumeration involved, so let’s get right into it.
 
 ## Recon
 

@@ -8,9 +8,9 @@ timestamp: 2024-11-24T00:42:30+00:00
 ---
 
 
-## Preamble
+## Introduction
 I set out two easy-rated cryptography challenges for p3rf3ctr00t ctf 2024. My challenges had one solve: and the challenge solved was `Goated`.
-This article assumes you have some little background in cryptography, and thus we'll write some Python code and do some maths.
+This article assumes you have some little background in cryptography, and thus we'll write some Python code and do some math.
 
 ## Challenge 1 - Purr
 
