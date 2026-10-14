@@ -128,5 +128,3 @@ Finally, we get the actual value of `m`, and we can now proceed to convert it f
 ![image.png](../../src/assets/lost-modulus-htb-24042024/image%207.png)
 
 I pixelated the flag content, cause I thought to try out pixelating images, and I heard it’s no longer secure. Can we find a way to recover our flag from that image? Our next challenge. Next time✊🏽.
-
-![image.png](../../src/assets/lost-modulus-htb-24042024/image%208.png)

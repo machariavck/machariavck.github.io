@@ -24,14 +24,12 @@ const featuredArticles = (
 			property="og:description"
 			content={config.globalMeta.description}
 		/>
-		{
-			config.globalMeta.keywords && (
-				<meta
-					name="keywords"
-					content={config.globalMeta.keywords.join(", ")}
-				/>
-			)
-		}
+		{config.globalMeta.keywords && (
+			<meta
+				name="keywords"
+				content={config.globalMeta.keywords.join(", ")}
+			/>
+		)}
 		<meta property="og:url" content={config.site.baseUrl} />
 		<meta name="x:card" content="summary_large_image" />
 		<meta name="x:title" content={config.globalMeta.title} />
@@ -40,7 +38,7 @@ const featuredArticles = (
 		<meta name="language" content="English" />
 		<link rel="canonical" href={config.site.baseUrl} />
 	</Fragment>
-	<Section class="my-16 text-center">Doomsday is coming..</Section>
+	<Section class="my-16 text-center">Security Writeups and Research</Section>
 	<Section>
 		<FeaturedArticles featuredArticles={featuredArticles} />
 	</Section>
